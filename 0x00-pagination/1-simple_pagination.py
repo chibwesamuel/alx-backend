@@ -6,6 +6,7 @@ with default value 1 and page_size with default value 10.
 
 
 import csv
+import math
 from typing import List, Union, Tuple
 
 class Server:
@@ -34,7 +35,7 @@ class Server:
         assert page_size > 0, "Page size must be a positive integer"
 
         total_pages = math.ceil(len(self.__dataset) / page_size)
-        if page > total_pages:
+        if page > total_pages or page < 1:
             return []
 
         index_range = self.index_range(page, page_size)
