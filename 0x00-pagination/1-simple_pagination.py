@@ -4,10 +4,9 @@ Implement a method named get_page that takes two integer arguments page
 with default value 1 and page_size with default value 10.
 """
 
-
 import csv
 import math
-from typing import List, Union, Tuple
+from typing import List, Tuple
 
 class Server:
     """Server class to paginate a database of popular baby names."""
@@ -42,7 +41,10 @@ class Server:
         return self.__dataset[index_range[0]:index_range[1]]
 
     def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
-        """Return a tuple of start and end indexes for the given page and page size."""
+        """
+        Return a tuple of start and end indexes for the
+        given page and page size
+        """
         start_index = (page - 1) * page_size
         end_index = page * page_size
         return start_index, end_index
@@ -63,7 +65,8 @@ if __name__ == "__main__":
     try:
         should_err = server.get_page(2, 'Bob')
     except AssertionError:
-        print("AssertionError raised when page and/or page_size are not ints")
+        print("AssertionError raised when page and/or
+                page_size are not ints")
 
     print(server.get_page(1, 3))
     print(server.get_page(3, 2))
