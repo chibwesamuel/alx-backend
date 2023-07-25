@@ -28,10 +28,10 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Get a page of the dataset based on page number and page size."""
-        assert isinstance(page, int) and page > 0, "Page must be a
-        positive integer"
-        assert isinstance(page_size, int) and page_size > 0, "Page size
-        must be a positive integer"
+        assert isinstance(page, int), "Page must be an integer"
+        assert page > 0, "Page must be a positive integer"
+        assert isinstance(page_size, int), "Page size must be an integer"
+        assert page_size > 0, "Page size must be a positive integer"
 
         index_range = index_range(page, page_size)
         return self.__dataset[index_range[0]:index_range[1]]
