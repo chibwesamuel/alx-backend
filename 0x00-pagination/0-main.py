@@ -3,9 +3,15 @@
 Main file
 """
 
-index_range = __import__('0-simple_helper_function').index_range
+import sys
+from typing import Tuple
 
-res = index_range(1, 7)
+# Add the current directory to the sys.path
+sys.path.append(".")
+
+from simple_helper_function import index_range
+
+res: Tuple[int, int] = index_range(1, 7)
 print(type(res))
 print(res)
 
