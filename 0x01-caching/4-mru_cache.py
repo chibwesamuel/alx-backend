@@ -5,6 +5,7 @@ MRUCache module
 
 from base_caching import BaseCaching
 
+
 class MRUCache(BaseCaching):
     """MRUCache class that inherits from BaseCaching."""
 
@@ -23,8 +24,9 @@ class MRUCache(BaseCaching):
         Note:
             If either key or item is None, this method does nothing.
             If the number of items in self.cache_data is higher than
-            BaseCaching.MAX_ITEMS, the most recently used item (MRU algorithm)
-            is discarded, and the new item is added to the end of the queue.
+            BaseCaching.MAX_ITEMS, the most recently used item
+            (MRU algorithm) is discarded, and the new item is added
+            to the end of the queue.
         """
         if key is not None and item is not None:
             if key in self.cache_data:
@@ -43,12 +45,11 @@ class MRUCache(BaseCaching):
             key (any): The key to retrieve the item.
 
         Returns:
-            any: The value associated with the key, or None if the key doesn't exist
-                 in the cache.
+            any: The value associated with the key, or None if the key
+            doesn't exist in the cache.
         """
         if key in self.cache_data:
             self.queue.remove(key)
             self.queue.append(key)
             return self.cache_data.get(key)
         return None
-
