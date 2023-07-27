@@ -5,6 +5,7 @@ BasicCache module
 
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """BasicCache class that inherits from BaseCaching."""
 
@@ -28,8 +29,7 @@ class BasicCache(BaseCaching):
             key: The key to retrieve the item.
 
         Returns:
-            The value associated with the key, or None if the key doesn't exist
-            in the cache.
+            The value associated with the key, or None if the key doesn't
+            exist in the cache.
         """
         return self.cache_data.get(key)
-
