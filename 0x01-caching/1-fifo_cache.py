@@ -5,6 +5,7 @@ FIFOCache module
 
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """FIFOCache class that inherits from BaseCaching."""
 
@@ -23,7 +24,8 @@ class FIFOCache(BaseCaching):
         Note:
             If either key or item is None, this method does nothing.
             If the number of items in self.cache_data is higher than
-            BaseCaching.MAX_ITEMS, the first item put in cache is discarded (FIFO algorithm).
+            BaseCaching.MAX_ITEMS, the first item put in cache is
+            discarded (FIFO algorithm).
         """
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
@@ -40,8 +42,7 @@ class FIFOCache(BaseCaching):
             key (any): The key to retrieve the item.
 
         Returns:
-            any: The value associated with the key, or None if the key doesn't exist
-                 in the cache.
+            any: The value associated with the key, or None if the key
+            doesn't exist in the cache.
         """
         return self.cache_data.get(key)
-
