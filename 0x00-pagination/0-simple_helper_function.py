@@ -20,8 +20,8 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     if page <= 0 or page_size <= 0:
         raise ValueError("Page and page_size must be positive integers.")
 
-    start_index = (page - 1) * page_size + 1
-    end_index = page * page_size
+    start_index = (page - 1) * page_size
+    end_index = page * page_size - 1
 
     return start_index, end_index
 
@@ -31,12 +31,10 @@ try:
     assert isinstance(result, tuple), "function did not return a tuple"
     assert len(result) == 2, "function did not return a tuple of size 2"
     print("function returned a tuple of size 2")
-    print("function returned a", type(result))
-    print("not found 0")
-    print("not found 1")
-    print("not found 2")
-    print("not found 3")
-    print("not found 4")
-    print("not found 5")
+    assert isinstance(result[0], int) and isinstance(result[1], int), "tuple elements should be integers"
+    print("tuple elements are integers")
+    assert result[0] == 20, "incorrect start index"
+    assert result[1] == 29, "incorrect end index"
+    print("start and end indices are correct")
 except Exception as e:
     print("Error:", str(e))
