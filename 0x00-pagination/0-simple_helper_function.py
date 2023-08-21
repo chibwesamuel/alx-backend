@@ -5,6 +5,7 @@ Simple helper function to calculate index range for pagination.
 
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Return a tuple containing the start index and end index for pagination.
@@ -30,11 +31,10 @@ try:
     result = index_range(3, 10)
     assert isinstance(result, tuple), "function did not return a tuple"
     assert len(result) == 2, "function did not return a tuple of size 2"
-    print("function returned a tuple of size 2")
-    assert isinstance(result[0], int) and isinstance(result[1], int), "tuple elements should be integers"
-    print("tuple elements are integers")
+    assert all(isinstance(item, int) for item in result), "tuple elements
+    should be integers"
     assert result[0] == 20, "incorrect start index"
     assert result[1] == 29, "incorrect end index"
-    print("start and end indices are correct")
+    print("OK")
 except Exception as e:
     print("Error:", str(e))
