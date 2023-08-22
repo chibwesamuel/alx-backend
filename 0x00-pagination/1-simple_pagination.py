@@ -49,6 +49,7 @@ class Server:
         Returns:
             List[List[str]]: A list of rows representing the page data.
         """
+        self.__dataset = self.dataset()
         assert isinstance(page, int), "Page must be an integer"
         assert page > 0, "Page must be a positive integer"
         assert isinstance(page_size, int), "Page size must be an integer"
