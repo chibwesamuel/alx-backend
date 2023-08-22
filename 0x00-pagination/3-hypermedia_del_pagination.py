@@ -7,6 +7,7 @@ import csv
 import math
 from typing import List, Dict
 
+
 class Server:
     """Server class to paginate a database of popular baby names."""
 
@@ -36,16 +37,20 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Return hypermedia pagination details for the given index and page_size.
+        """Return hypermedia pagination details for the given index and
+        page_size.
 
         Args:
-            index (int, optional): The starting index for pagination (default is None).
-            page_size (int, optional): The number of items per page (default is 10).
+            index (int, optional): The starting index for pagination
+            (default is None).
+            page_size (int, optional): The number of items per page
+            (default is 10).
 
         Returns:
             Dict: A dictionary containing hypermedia pagination details.
         """
-        assert index is None or 0 <= index < len(self.indexed_dataset()), "Invalid index range"
+        assert index is None or 0 <= index < len
+        (self.indexed_dataset(), "Invalid index range"
 
         if index is None:
             index = 0
@@ -53,7 +58,7 @@ class Server:
         dataset = self.indexed_dataset()
         next_index = index + page_size
 
-        last_index = next_index
+        last_index = min(next_index - 1, len(dataset) - 1)
         while last_index >= index and last_index not in dataset:
             last_index -= 1
 
@@ -83,9 +88,9 @@ if __name__ == "__main__":
     try:
         should_err = server.get_hyper_index(2, 'Bob')
     except AssertionError:
-        print("AssertionError raised when index and/or page_size are not ints")
+        print("AssertionError raised when index and/or page_size
+                are not ints")
 
     print(server.get_hyper_index(1, 3))
     print(server.get_hyper_index(3, 2))
     print(server.get_hyper_index(3000, 100))
-
