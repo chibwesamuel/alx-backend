@@ -9,6 +9,7 @@ import csv
 import math
 from typing import List, Tuple
 
+
 class Server:
     """Server class to paginate a database of popular baby names.
 
@@ -27,7 +28,8 @@ class Server:
         """Cached dataset.
 
         Returns:
-            List[List[str]]: The dataset loaded from the CSV file, excluding the header row.
+            List[List[str]]: The dataset loaded from the CSV file, excluding
+            the header row.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -41,7 +43,8 @@ class Server:
 
         Args:
             page (int, optional): Page number (default is 1).
-            page_size (int, optional): Number of items per page (default is 10).
+            page_size (int, optional): Number of items per page
+            (default is 10).
 
         Returns:
             List[List[str]]: A list of rows representing the page data.
@@ -59,18 +62,21 @@ class Server:
         return self.__dataset[index_range[0]:index_range[1]]
 
     def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
-        """Return a tuple of start and end indexes for the given page and page size.
+        """Return a tuple of start and end indexes for the given page and
+        page size.
 
         Args:
             page (int): Page number.
             page_size (int): Number of items per page.
 
         Returns:
-            Tuple[int, int]: A tuple (start_index, end_index) representing the index range for the page.
+            Tuple[int, int]: A tuple (start_index, end_index) representing the
+            index range for the page.
         """
         start_index = (page - 1) * page_size
         end_index = page * page_size
         return start_index, end_index
+
 
 if __name__ == "__main__":
     server = Server()
@@ -93,4 +99,3 @@ if __name__ == "__main__":
     print(server.get_page(1, 3))
     print(server.get_page(3, 2))
     print(server.get_page(3000, 100))
-
