@@ -26,6 +26,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 
     return start_index, end_index
 
+
 # Test the function and print the messages for the checks
 try:
     result = index_range(3, 10)
@@ -36,5 +37,8 @@ try:
     assert result[0] == 20, "incorrect start index"
     assert result[1] == 29, "incorrect end index"
     print("OK")
+
+
 except Exception as e:
+    """Error exception"""
     print("Error:", str(e))
