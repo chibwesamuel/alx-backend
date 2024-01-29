@@ -50,8 +50,8 @@ class Server:
             Dict: A dictionary containing hypermedia pagination details.
         """
         assert index is None or 0 <= index < len(
-                self.indexed_dataset()
-                ), "Invalid index range"
+            self.indexed_dataset()
+        ), "Invalid index range"
 
         if index is None:
             index = 0
@@ -78,22 +78,6 @@ if __name__ == "__main__":
     Example usage and testing of the Server class.
     """
     server = Server()
-
-    try:
-        should_err = server.get_hyper_index(-10, 2)
-    except AssertionError:
-        print("AssertionError raised with negative values")
-
-    try:
-        should_err = server.get_hyper_index(0, 0)
-    except AssertionError:
-        print("AssertionError raised with 0")
-
-    try:
-        should_err = server.get_hyper_index(2, 'Bob')
-    except AssertionError:
-        print("AssertionError raised when index and/or page_size are not
-                ints")
 
     print(server.get_hyper_index(1, 3))
     print(server.get_hyper_index(3, 2))
