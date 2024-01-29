@@ -93,6 +93,9 @@ class Server:
 
 
 if __name__ == "__main__":
+    """
+    Application and testing of the Server class.
+    """
     server = Server()
 
     try:
