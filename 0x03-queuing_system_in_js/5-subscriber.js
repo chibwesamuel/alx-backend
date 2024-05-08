@@ -19,4 +19,3 @@ subscriber.on('message', (channel, message) => {
     subscriber.quit();
   }
 });
-

@@ -35,4 +35,3 @@ queue.on('job complete', (id) => {
 queue.on('job failed', (id) => {
   console.error(`Notification job ${id} failed`);
 });
-

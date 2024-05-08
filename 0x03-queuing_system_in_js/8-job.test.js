@@ -6,7 +6,7 @@ describe('createPushNotificationsJobs', () => {
   let queue;
 
   before(() => {
-    // Set up Kue queue in test mode
+    // Set up the Kue queue in test mode
     queue = kue.createQueue({ redis: { host: '127.0.0.1', port: 6379 } });
     queue.testMode.enter();
   });

@@ -8,7 +8,7 @@ client.on('connect', () => {
   console.log('Redis client connected to the server');
 });
 
-// Event listener for connection errors
+// Event listener for connection all errors
 client.on('error', (err) => {
   console.error(`Redis client not connected to the server: ${err}`);
 });

@@ -18,7 +18,7 @@ client.on('error', (err) => {
   console.error(`Redis client not connected to the server: ${err}`);
 });
 
-// Function to set a new school value in Redis
+// This is a function to set a new school value in Redis
 async function setNewSchool(schoolName, value) {
   try {
     const reply = await setAsync(schoolName, value);

@@ -11,3 +11,4 @@ const list = [
     }
 ];
 createPushNotificationsJobs(list, queue);
+

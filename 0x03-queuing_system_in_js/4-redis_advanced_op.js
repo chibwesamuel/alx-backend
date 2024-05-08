@@ -13,7 +13,7 @@ client.on('error', (err) => {
   console.error(`Redis client not connected to the server: ${err}`);
 });
 
-// Create Hash
+// Function to create Hash
 client.hset(
   'HolbertonSchools',
   'Portland',

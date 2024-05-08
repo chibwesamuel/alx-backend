@@ -23,7 +23,7 @@ class LFUCache(BaseCaching):
             item (any): The item to be stored.
 
         Note:
-            If either key or item is None, this method does nothing.
+            If either key or item is None, this method will do nothing.
             If the number of items in self.cache_data is higher than
             BaseCaching.MAX_ITEMS, the least frequency used item
             (LFU algorithm) is discarded. If there are more than one

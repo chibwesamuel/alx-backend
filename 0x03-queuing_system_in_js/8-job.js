@@ -28,4 +28,3 @@ const createPushNotificationsJobs = (jobs, queue) => {
 };
 
 export default createPushNotificationsJobs;
-

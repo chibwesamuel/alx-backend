@@ -5,7 +5,7 @@ This repository contains a set of tasks focusing on implementing a queuing syste
 ## Tasks
 
 ### 0. Install a Redis Instance
-- Download, extract, and compile the latest stable Redis version.
+- Download, extract and compile the latest stable Redis version.
 - Start Redis in the background and ensure it's working correctly.
 - Copy the Redis dump file into the project root.
 

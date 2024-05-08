@@ -20,7 +20,7 @@ function setNewSchool(schoolName, value) {
       console.error(`Error setting value in Redis: ${err}`);
     } else {
       console.log(`Value set for ${schoolName}: ${value}`);
-      console.log(reply); // redis.print is not available, so logging the reply instead
+      console.log(reply); // logging the reply
     }
   });
 }
